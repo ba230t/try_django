@@ -21,4 +21,3 @@ class SeleniumAdminTests(StaticLiveServerTestCase):
     def test_index(self):
         self.browser.get("%s%s" % (self.live_server_url, '/admin/'))
         self.assertTrue(self.browser.title != '')
-        self.assertEqual(self.browser.title, 'ログイン | Django サイト管理')
