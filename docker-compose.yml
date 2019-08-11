@@ -9,10 +9,16 @@ services:
       - 7000:7000
     depends_on:
       - db
+      - selenium
   db:
     image: postgres:11.1-alpine
     volumes:
       - db:/var/lib/postgresql/data
+  selenium:
+    image: selenium/standalone-chrome-debug
+    ports:
+      - 4444:4444
+      - 5900:5900
 volumes:
   db:
     driver: local
