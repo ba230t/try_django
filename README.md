@@ -28,7 +28,6 @@ ENV PIPENV_VENV_IN_PROJECT 1  # [Pipenv]プロジェクトの直下に仮想環�
 # migrate前にDBを作成しておく必要がある
 # migrate後にテストデータを入れておく
 docker-compose build
-docker-compose run app pipenv install
 docker-compose run app psql -U postgres -h db -c "create database mydatabase;"
 docker-compose run app pipenv run python manage.py migrate
 docker-compose run app pipenv run python manage.py loaddata polls/fixtures/test_data.json

@@ -12,3 +12,5 @@ ENV PIPENV_VENV_IN_PROJECT 1
 WORKDIR /app
 
 RUN pip install pipenv
+ADD Pipfile* /app/
+RUN pipenv install
